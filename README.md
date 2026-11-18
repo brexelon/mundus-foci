@@ -79,6 +79,48 @@ docker run -d --name mundus-foci -p 25565:25565 -p 24454:24454/udp \
   -e EULA=TRUE -e MEMORY=6G -v mundus-world:/data mundus-foci-server
 ```
 
+**Option 4: Coolify.** Runs the release image from Option 3 on a [Coolify](https://coolify.io/) server.
+The host needs about **8 GB of RAM** (6 GB for Minecraft plus overhead).
+
+1. Make the image pullable. GitHub creates `ghcr.io/<owner>/mundus-foci-server` as a private package,
+   so either set it to **Public** (GitHub → *Packages* → `mundus-foci-server` → *Package settings*), or
+   run `docker login ghcr.io` on the Coolify host with a token that has `read:packages`.
+2. In Coolify, choose **+ New → Resource → Docker Compose Empty**, pick the server, and paste:
+   ```yaml
+   services:
+     mc:
+       image: ghcr.io/YOUR_USER/mundus-foci-server:v1.0.0   # use the release your players have
+       restart: unless-stopped
+       tty: true
+       stdin_open: true
+       ports:
+         - "25565:25565"      # Minecraft
+         - "24454:24454/udp"  # Simple Voice Chat
+       environment:
+         EULA: "TRUE"         # accepts https://aka.ms/MinecraftEULA
+         MEMORY: 6G
+         OPS: ${OPS:-}
+         WHITELIST: ${WHITELIST:-}
+       volumes:
+         - mundus-world:/data
+   volumes:
+     mundus-world:
+   ```
+   Any other [itzg variable](https://docker-minecraft-server.readthedocs.io/en/latest/variables/) can be
+   added under `environment`.
+3. In the **Environment Variables** tab, set `OPS` (and `WHITELIST`, comma-separated) to Minecraft usernames.
+4. Leave the **Domains** field empty. Minecraft doesn't use HTTP, so Coolify's proxy isn't involved and
+   players connect straight to the host's IP or DNS name. Open **25565/tcp** and **24454/udp** in the
+   host's firewall (`ufw`) and in your cloud provider's firewall.
+5. Click **Deploy** and watch the **Logs** tab. The first boot takes several minutes.
+6. To run server commands, open the **Terminal** tab, pick the `mc` container and use `rcon-cli`, for example
+   `rcon-cli mundus pregen 3000`.
+
+To update, back up the `mundus-world` volume (listed under **Persistent Storage**), change the image tag to
+the new release and **Redeploy**. To follow `main` instead of releases, use `itzg/minecraft-server:java17`
+as the image and copy the **packwiz URL** variables (Option B) from
+[server/docker-compose.yml](server/docker-compose.yml). That mode re-syncs the pack on every restart.
+
 On a fresh server, pre-generate the world to reduce exploration lag: `/mundus pregen 3000`.
 
 ---
