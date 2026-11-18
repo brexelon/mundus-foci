@@ -1,0 +1,52 @@
+# Mundus Foci dedicated server via the itzg/minecraft-server image.
+# Docs for every variable: https://docker-minecraft-server.readthedocs.io/
+#
+#   1. python tools/build.py mrpack        (creates dist/mundus-foci-latest.mrpack)
+#   2. cd server && docker compose up -d
+#   3. docker compose logs -f mc           (first boot takes several minutes)
+#
+# The world, configs and logs live in ./data. Back it up before updating.
+# To update: rebuild the mrpack, then `docker compose up -d --force-recreate`.
+
+services:
+  mc:
+    image: itzg/minecraft-server:java17
+    container_name: mundus-foci
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    ports:
+      - "25565:25565"      # Minecraft
+      - "24454:24454/udp"  # Simple Voice Chat
+    environment:
+      # Set to "TRUE" to accept the Minecraft EULA: https://aka.ms/MinecraftEULA
+      EULA: "FALSE"
+
+      # --- Option A (default): install from the locally built .mrpack ---------------
+      TYPE: MODRINTH
+      MODRINTH_MODPACK: /modpacks/mundus-foci-latest.mrpack
+
+      # --- Option B: auto-update from a hosted packwiz repo on every restart --------
+      # Comment out Option A, push this repo to GitHub, then uncomment and edit:
+      # TYPE: FABRIC
+      # VERSION: "1.20.1"
+      # FABRIC_LOADER_VERSION: "0.20.1"
+      # PACKWIZ_URL: https://raw.githubusercontent.com/YOUR_USER/mundus-foci/main/pack.toml
+
+      MEMORY: 6G
+      USE_AIKAR_FLAGS: "TRUE"
+      MOTD: "§6Mundus Foci§r §7- a world to call home"
+      DIFFICULTY: normal
+      VIEW_DISTANCE: 10
+      SIMULATION_DISTANCE: 8
+      ALLOW_FLIGHT: "TRUE"
+      MAX_TICK_TIME: -1
+      SPAWN_PROTECTION: 0
+      ENABLE_RCON: "TRUE"
+      # RCON_PASSWORD: change-me     # otherwise a random one is generated each start
+      # OPS: your_username
+      # ENABLE_WHITELIST: "TRUE"
+      # WHITELIST: friend1,friend2
+    volumes:
+      - ./data:/data
+      - ../dist:/modpacks:ro

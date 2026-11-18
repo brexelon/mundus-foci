@@ -1,0 +1,7 @@
+# packwiz hashes every file in the index, so line endings must never be rewritten on checkout.
+* text=auto eol=lf
+*.png binary
+*.jar binary
+*.zip binary
+*.mrpack binary
+*.bat text eol=crlf

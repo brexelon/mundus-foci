@@ -1,0 +1,14 @@
+# Mundus Foci default server settings.
+# Copied to server.properties on first start; edit server.properties after that.
+motd=§6Mundus Foci§r §7- a world to call home
+# Mods with flying mounts / climbing can trip the vanilla fly-kick.
+allow-flight=true
+view-distance=10
+simulation-distance=8
+difficulty=normal
+spawn-protection=0
+# Heavy world generation (biome + structure mods) can stall a tick for longer than the
+# 60 s vanilla watchdog allows on slower hosts. -1 disables the watchdog.
+max-tick-time=-1
+sync-chunk-writes=false
+enable-command-block=false

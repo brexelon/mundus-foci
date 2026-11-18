@@ -1,0 +1,3 @@
+# Build context for server/Dockerfile: only the built mrpack is needed.
+*
+!dist/mundus-foci-latest.mrpack

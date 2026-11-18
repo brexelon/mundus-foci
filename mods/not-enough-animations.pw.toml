@@ -1,0 +1,18 @@
+name = "Not Enough Animations"
+filename = "notenoughanimations-fabric-1.12.7-mc1.20.1.jar"
+side = "client"
+
+[option]
+optional = true
+default = true
+description = "Extra first/third-person animations."
+
+[download]
+url = "https://cdn.modrinth.com/data/MPCX6s5C/versions/PdFmKT5K/notenoughanimations-fabric-1.12.7-mc1.20.1.jar"
+hash-format = "sha512"
+hash = "d9dfec16eac57e0bdb1daac145d8826f7e0fdd7e1bc8e5fa60a6b6bf294ae1ac6d9f88ec316e7dbe11d9a0341986dc83bd7f14d75fd490005538801804052349"
+
+[update]
+[update.modrinth]
+mod-id = "MPCX6s5C"
+version = "PdFmKT5K"

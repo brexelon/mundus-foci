@@ -1,0 +1,14 @@
+# Files in the repo that are NOT part of the distributed pack
+.git/
+.github/
+.gitattributes
+.gitignore
+.editorconfig
+dist/
+build/
+tools/
+server/
+docs/
+*.md
+LICENSE
+.dockerignore
