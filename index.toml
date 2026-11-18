@@ -62,7 +62,7 @@ hash = "614094ed9768a1ea447d8b38b724fe9dcfb03a57893303ee3e236857bdacb224"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
-hash = "2bc58527cd3fea0ea308e5f28b6ef772ebe2761efc1421946a217b4ecbc7f1c8"
+hash = "5b1dbe6dd22b9f5ab755c2ba0990359d9c942c87e98585be039f01768fdc4b12"
 metafile = true
 
 [[files]]
@@ -72,7 +72,7 @@ metafile = true
 
 [[files]]
 file = "mods/ambientsounds.pw.toml"
-hash = "d435db237f2848998f76b72b7dafa50b3c9db03a71214e8e052d45b4629d7b63"
+hash = "3d043f153f842e00ec986ffd0ff29011a29427370217a521d37aaa5a1f2ad659"
 metafile = true
 
 [[files]]
@@ -107,7 +107,7 @@ metafile = true
 
 [[files]]
 file = "mods/better-third-person.pw.toml"
-hash = "eb41e0406496519f8588a8dd1d40d89a23e72082615cd3cf7774df83767d043d"
+hash = "c01ab5d009ee31d1c01711da79838ffa78d33aeea80b1a97fbe9a78c5df717a7"
 metafile = true
 
 [[files]]
@@ -117,7 +117,7 @@ metafile = true
 
 [[files]]
 file = "mods/chat-heads.pw.toml"
-hash = "95e3cd65ce363bf6d89fc91eb8e1c4c16009051161f0db78b75ee2629f4e8f72"
+hash = "c2c7113ae1289612500a4147beec71c5aa543cedea9c0afd3fa24c9ef34fc742"
 metafile = true
 
 [[files]]
@@ -177,7 +177,7 @@ metafile = true
 
 [[files]]
 file = "mods/creativecore.pw.toml"
-hash = "b11b39f287d7c3d000642bcad2fe38e83dd9c90d0e4da7d46a80d2e9ed885c7b"
+hash = "77ae2dd89584ce359b51fba81b3fd7239adf035602077a4ba3ce1c9ac86c8f0f"
 metafile = true
 
 [[files]]
@@ -297,7 +297,7 @@ metafile = true
 
 [[files]]
 file = "mods/iris.pw.toml"
-hash = "5f5d76bbaa2a9ac1df2216d797cb82e2db56339c516161fdfaddf07fe6d6244b"
+hash = "1d2cd807f2fc3d52d4051e66018f8c852de88a325d49a744dbdacc97693b9864"
 metafile = true
 
 [[files]]
@@ -482,7 +482,7 @@ metafile = true
 
 [[files]]
 file = "mods/not-enough-animations.pw.toml"
-hash = "bf0396d1e33a15308ca6f7828d0f4294ad8e84210136d9b86c0d4026875633c4"
+hash = "8d52ce0f041b288c441c87db727403180712a45b475792bcc02338d0c739e93a"
 metafile = true
 
 [[files]]
@@ -497,7 +497,7 @@ metafile = true
 
 [[files]]
 file = "mods/particle-rain.pw.toml"
-hash = "f332e6be1a0d21e7c9f27577c9833436f8a12d109605b4699c3abdf6f9d6c957"
+hash = "2991ddd7167149c2fc4ff87d74854cd710bc4758b8d31ad34ade6ef85a245b97"
 metafile = true
 
 [[files]]
@@ -597,12 +597,12 @@ metafile = true
 
 [[files]]
 file = "mods/visuality.pw.toml"
-hash = "3451f6782644a1592287d6aefc1a837fc1538c053d09e5e4b4a1d9e1e3d756da"
+hash = "28d32b6011c32c253158e639f59c8c7170720ca8f78bc9397c61207a0712f2ff"
 metafile = true
 
 [[files]]
 file = "mods/wavey-capes.pw.toml"
-hash = "6a11224f1cf181de1a36a168b5fcb71dd26383f4ec310d3d0c3ae7bef3699d2c"
+hash = "84bfd70fd2358e569cb71fa9e28e4db203cde4a966b8f66505bf7d24bc72dc6d"
 metafile = true
 
 [[files]]
@@ -612,12 +612,12 @@ metafile = true
 
 [[files]]
 file = "mods/xaeros-minimap.pw.toml"
-hash = "73d1c09204ddbffb8bb7db1e684df692786d21d9e278c8b647b71366184237fd"
+hash = "a51f3abeb3b8e967839ceaa01ed1ecb7ca035677421d2e0c35397feb2e4f0cad"
 metafile = true
 
 [[files]]
 file = "mods/xaeros-world-map.pw.toml"
-hash = "b07764220f7c795e81fdc3ec2794c2164abc5be9b1e0403e6baf8f06c355b3ea"
+hash = "351bc8595df10f9a4029af2f65586e5d03d65d05609c1417fe6eb7209057d5b1"
 metafile = true
 
 [[files]]
@@ -702,5 +702,5 @@ metafile = true
 
 [[files]]
 file = "mods/zoomify.pw.toml"
-hash = "1237e354f4300b25e23007a27b885b9be7877b0595fd4df9dac52512a0d2f197"
+hash = "0ab8d82f31c6de6e42b3115fa10428c4d47a45a00aa46c9970620f1cab6cba57"
 metafile = true

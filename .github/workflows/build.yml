@@ -13,22 +13,22 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v7
         with:
           go-version: stable
           cache: false
       - name: Install packwiz
         run: go install github.com/packwiz/packwiz@latest
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: build/cache
           key: mod-jars-${{ hashFiles('index.toml') }}
@@ -45,7 +45,7 @@ jobs:
       - name: Static dependency check
         run: python tools/check_deps.py
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: mundus-foci
           path: |
@@ -57,23 +57,23 @@ jobs:
   test-server:
     # Boots the real server pack once (Java 17) and fails on crash or KubeJS load failure.
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
         with:
           go-version: stable
           cache: false
       - run: go install github.com/packwiz/packwiz@latest
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: "17"
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: build/cache
           key: mod-jars-${{ hashFiles('index.toml') }}
@@ -83,7 +83,7 @@ jobs:
         run: python tools/build.py server --test-server --java java --timeout 20
       - name: Upload logs on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: test-server-logs
           path: |
@@ -93,10 +93,10 @@ jobs:
   release:
     if: startsWith(github.ref, 'refs/tags/v')
     needs: [build, test-server]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
         with:
           name: mundus-foci
           path: dist-artifacts
