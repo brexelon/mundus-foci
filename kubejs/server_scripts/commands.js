@@ -7,8 +7,6 @@
 //   /playtime                  everyone   show your total play time
 //   /gmc /gms /gma /gmsp       op (2)     gamemode shortcuts
 
-const $Stats = Java.loadClass('net.minecraft.stats.Stats')
-
 ServerEvents.commandRegistry(event => {
   const { commands: Commands, arguments: Arguments } = event
 
@@ -79,7 +77,11 @@ ServerEvents.commandRegistry(event => {
           }
           let level = ctx.source.server.overworld()
           let pos = level.getSharedSpawnPos()
-          player.teleportTo(level, pos.x + 0.5, pos.y, pos.z + 0.5, player.getYRot(), player.getXRot())
+          // Vanilla /tp without a rotation keeps the player's facing. Avoids Mojang-named
+          // Entity methods (getYRot etc.), which aren't reliably remapped on Fabric.
+          ctx.source.server.runCommandSilent(
+            `execute in minecraft:overworld run tp ${player.username} ${pos.x + 0.5} ${pos.y} ${pos.z + 0.5}`
+          )
           player.persistentData.putLong('mundusfoci_spawn_last', now)
           player.tell(Text.green('Welcome back to spawn.'))
           return 1
@@ -91,10 +93,11 @@ ServerEvents.commandRegistry(event => {
   event.register(
     Commands.literal('coords').executes(ctx => {
       let player = ctx.source.getPlayerOrException()
-      let dim = String(ctx.source.getLevel().dimension().location())
+      // KubeJS's LevelKJS.getDimension() shadows vanilla dimension(), so read it as a property.
+      let dim = String(ctx.source.getLevel().dimension)
       let msg = Text.gold(player.username)
         .append(Text.gray(' is at '))
-        .append(Text.yellow(`${Math.floor(player.getX())} ${Math.floor(player.getY())} ${Math.floor(player.getZ())}`))
+        .append(Text.yellow(`${Math.floor(player.x)} ${Math.floor(player.y)} ${Math.floor(player.z)}`))
         .append(Text.gray(` in ${dim}`))
       ctx.source.server.tell(msg)
       return 1
@@ -105,7 +108,8 @@ ServerEvents.commandRegistry(event => {
   event.register(
     Commands.literal('playtime').executes(ctx => {
       let player = ctx.source.getPlayerOrException()
-      let ticks = player.getStats().getValue($Stats.CUSTOM.get($Stats.PLAY_TIME))
+      // KubeJS wraps getStats() in PlayerStatsJS, which has its own play time getter.
+      let ticks = player.stats.playTime
       let minutes = Math.floor(ticks / 1200)
       let text = `${Math.floor(minutes / 60)}h ${minutes % 60}m`
       player.tell(Text.gray('You have played on this world for ').append(Text.gold(text)))
