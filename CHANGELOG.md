@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3
+- Added VeinMiner mod
+- Removed Alex's Mobs, Citadel, and Kilt
+
 ## 1.0.2
 - Added Immersive Paintings mod
 

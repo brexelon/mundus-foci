@@ -38,7 +38,7 @@ hash = "3691a8e51887a13f79b1bfb1ad46a104ad43d9b27d1b82bc507d506095be623e"
 
 [[files]]
 file = "kubejs/server_scripts/00_config.js"
-hash = "0fdb09a914ba80e5df7cbf7fc48d13dcbedb4dbe2de50ed96c7b37b9c85cc434"
+hash = "1608bd182962d5c418359056e310fae4903ca3e4d794eb6e2dae0420bd72a852"
 
 [[files]]
 file = "kubejs/server_scripts/commands.js"
@@ -63,11 +63,6 @@ hash = "614094ed9768a1ea447d8b38b724fe9dcfb03a57893303ee3e236857bdacb224"
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
 hash = "5b1dbe6dd22b9f5ab755c2ba0990359d9c942c87e98585be039f01768fdc4b12"
-metafile = true
-
-[[files]]
-file = "mods/alexs-mobs.pw.toml"
-hash = "f1944152a025ff22c804d013d89e72b5a676437842d7dfc70f7916bdcf35eb2a"
 metafile = true
 
 [[files]]
@@ -128,11 +123,6 @@ metafile = true
 [[files]]
 file = "mods/chunky.pw.toml"
 hash = "b1581bbfae9d16690f4022536da6567f000130c4ea5e04d92177c1bc61fea709"
-metafile = true
-
-[[files]]
-file = "mods/citadel.pw.toml"
-hash = "eaace7f199b541b160f8ed33470455e28359579b8917c4789ef1919b8e814e7b"
 metafile = true
 
 [[files]]
@@ -313,11 +303,6 @@ metafile = true
 [[files]]
 file = "mods/jei.pw.toml"
 hash = "02e405e48eb88d738c35f23bda13c81424fb070e272981562e4b5796abc45979"
-metafile = true
-
-[[files]]
-file = "mods/kilt.pw.toml"
-hash = "425afbb1e5ce373a41c92544490648dd7a9c29ade9a3fe73f848272d1f71320f"
 metafile = true
 
 [[files]]
@@ -546,6 +531,11 @@ hash = "2e6fb1842744392bac79f92c25c04613af1b82a904a29f7afd0df4f61a4c757e"
 metafile = true
 
 [[files]]
+file = "mods/silk.pw.toml"
+hash = "3159f65be74fdf8c382f2079d9db965972c8612e661f126be522ae37a73c34f8"
+metafile = true
+
+[[files]]
 file = "mods/simple-voice-chat.pw.toml"
 hash = "e9eff21bd99eeb4c4b92bf27d21390c052d48477fdca3853ae08b800882830d4"
 metafile = true
@@ -598,6 +588,11 @@ metafile = true
 [[files]]
 file = "mods/trinkets.pw.toml"
 hash = "ffdb79f5bc29f990e5889f5d159a043c7046b8cd8d79f17f54b44d7ccc2b242a"
+metafile = true
+
+[[files]]
+file = "mods/veinminer.pw.toml"
+hash = "06d9fff906b545b3634f7e19b5b39b6de11ec1340c24905e02d2f6d06ee341e8"
 metafile = true
 
 [[files]]
