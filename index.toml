@@ -1,10 +1,6 @@
 hash-format = "sha256"
 
 [[files]]
-file = ".vscode/settings.json"
-hash = "127e1d4976ed1c297e2f6d326c8bcce86c0ab7bb1833be2c351417a8dcd999e0"
-
-[[files]]
 file = "kubejs/assets/mundusfoci/lang/en_us.json"
 hash = "618e252ab80d54972ab9f9375b3dda37e4183deace92ee635243e77df554a6f1"
 
