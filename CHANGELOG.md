@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.4
+- Removed Xaero's Minimap & World Map as that is handled by FTB Chunks now
+
 ## 1.0.3
 - Added FTB Ultimine, FTB Essentials, FTB Chunks, and FTB XMod Compat
 - Removed Alex's Mobs, Citadel, and Kilt

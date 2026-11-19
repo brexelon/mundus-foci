@@ -38,7 +38,7 @@ hash = "3691a8e51887a13f79b1bfb1ad46a104ad43d9b27d1b82bc507d506095be623e"
 
 [[files]]
 file = "kubejs/server_scripts/00_config.js"
-hash = "d4ee79bdae887c30c9da0f214d2a9942c1eb3872343ce81f6fb2bb18ce18dd27"
+hash = "9a09d63a32e0195c3caf9c2dd5b79ed4ff3963b8511412d6ff3706c06471fc2b"
 
 [[files]]
 file = "kubejs/server_scripts/commands.js"
@@ -628,16 +628,6 @@ metafile = true
 [[files]]
 file = "mods/waystones.pw.toml"
 hash = "82d7a3b521d4c249b424787cd5661f29088b54c7a3616df82a4808aec7e284cd"
-metafile = true
-
-[[files]]
-file = "mods/xaeros-minimap.pw.toml"
-hash = "a51f3abeb3b8e967839ceaa01ed1ecb7ca035677421d2e0c35397feb2e4f0cad"
-metafile = true
-
-[[files]]
-file = "mods/xaeros-world-map.pw.toml"
-hash = "351bc8595df10f9a4029af2f65586e5d03d65d05609c1417fe6eb7209057d5b1"
 metafile = true
 
 [[files]]
