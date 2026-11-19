@@ -6,13 +6,6 @@ global.MF_CONFIG = {
   // Kept in sync with pack.toml by `python tools/build.py --set-version X.Y.Z`. Do not edit by hand.
   packVersion: '1.0.3',
 
-  // /spawn: teleport to world spawn. Ops (permission level 2+) bypass the cooldown.
-  spawnCommand: {
-    enabled: true,
-    permissionLevel: 0, // 0 = everyone, 2 = ops only
-    cooldownSeconds: 300,
-  },
-
   // Lodestone Charm (item magnet).
   magnet: {
     radius: 6.0, // blocks

@@ -2,7 +2,6 @@
 //
 //   /mundus [help|version]     everyone   pack info
 //   /mundus pregen <radius>    op (3)     pre-generate the overworld around spawn with Chunky
-//   /spawn                     config     teleport to world spawn (cooldown, see 00_config.js)
 //   /coords                    everyone   share your position in chat
 //   /playtime                  everyone   show your total play time
 //   /gmc /gms /gma /gmsp       op (2)     gamemode shortcuts
@@ -59,35 +58,6 @@ ServerEvents.commandRegistry(event => {
         .requires(src => src.hasPermission(3))
         .then(Commands.argument('radius', Arguments.INTEGER.create(event)).executes(pregen)))
   )
-
-  // ------------------------------------------------------------------ /spawn
-  const spawnCfg = global.MF_CONFIG.spawnCommand
-  if (spawnCfg.enabled) {
-    event.register(
-      Commands.literal('spawn')
-        .requires(src => src.hasPermission(spawnCfg.permissionLevel))
-        .executes(ctx => {
-          let player = ctx.source.getPlayerOrException()
-          let now = Date.now()
-          let last = player.persistentData.getLong('mundusfoci_spawn_last')
-          let waitMs = spawnCfg.cooldownSeconds * 1000 - (now - last)
-          if (waitMs > 0 && !ctx.source.hasPermission(2)) {
-            player.tell(Text.red(`/spawn is on cooldown for another ${Math.ceil(waitMs / 1000)}s.`))
-            return 0
-          }
-          let level = ctx.source.server.overworld()
-          let pos = level.getSharedSpawnPos()
-          // Vanilla /tp without a rotation keeps the player's facing. Avoids Mojang-named
-          // Entity methods (getYRot etc.), which aren't reliably remapped on Fabric.
-          ctx.source.server.runCommandSilent(
-            `execute in minecraft:overworld run tp ${player.username} ${pos.x + 0.5} ${pos.y} ${pos.z + 0.5}`
-          )
-          player.persistentData.putLong('mundusfoci_spawn_last', now)
-          player.tell(Text.green('Welcome back to spawn.'))
-          return 1
-        })
-    )
-  }
 
   // ----------------------------------------------------------------- /coords
   event.register(

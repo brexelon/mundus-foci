@@ -38,11 +38,11 @@ hash = "3691a8e51887a13f79b1bfb1ad46a104ad43d9b27d1b82bc507d506095be623e"
 
 [[files]]
 file = "kubejs/server_scripts/00_config.js"
-hash = "256b44168ab3390e6c03b5513fc6759ee60533805ea59dd1afdeec35cbd4e1a7"
+hash = "e50bb44badbfd10bd4989e3aa875e33d7b42ce24b978f315a767cda804405c6d"
 
 [[files]]
 file = "kubejs/server_scripts/commands.js"
-hash = "868794871cd2efd7fe0eb9cd0677a3eb263f980567ea82f9d993f614cfe38e59"
+hash = "92120e593bd11ff1de931ea37566c7bec61821171ab198d39bfab99d075f0e9e"
 
 [[files]]
 file = "kubejs/server_scripts/events.js"
@@ -87,7 +87,7 @@ metafile = true
 
 [[files]]
 file = "mods/architectury-api.pw.toml"
-hash = "e12dce3e543168379a2856c66064ee2001e6420a9dfc6163f37b78e518947456"
+hash = "2492a7266fab4c2ff411612180974b98510afb66a18e640f4de63ad615dd1e9e"
 metafile = true
 
 [[files]]
@@ -217,7 +217,7 @@ metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "f42dcc815231697e3d5038e7e34e2ef6637a7bf3e2fe077e4eafb0488f871b9a"
+hash = "28d2059c8175c64f9dd72975aea9fc7e3551f3dbf11d234b45d0b86761244801"
 metafile = true
 
 [[files]]
@@ -253,6 +253,36 @@ metafile = true
 [[files]]
 file = "mods/friends-and-foes.pw.toml"
 hash = "ae55a660aab44e286df84560908ea916600062656ef9ccfacfb7b2e20da431aa"
+metafile = true
+
+[[files]]
+file = "mods/ftb-chunks-fabric.pw.toml"
+hash = "d93a794cc3b114b049f4fb2616a76a5c3e0e6da668bd4a8f367637dc69f40ddb"
+metafile = true
+
+[[files]]
+file = "mods/ftb-essentials.pw.toml"
+hash = "3916c26efd555e31b91585303cf9858c611a54b1225816870b47732a456bda07"
+metafile = true
+
+[[files]]
+file = "mods/ftb-library-fabric.pw.toml"
+hash = "c7a7385b0e5276a080ac0a005ddb7d8ca030db0995c512a1f2c0a61f8150c9ac"
+metafile = true
+
+[[files]]
+file = "mods/ftb-teams-fabric.pw.toml"
+hash = "8c2e6738d318980533ea582b51249f2bd3313eff1f5d1ca06766dc7bda1f89fe"
+metafile = true
+
+[[files]]
+file = "mods/ftb-ultimine-fabric.pw.toml"
+hash = "bcbfae029f8f1d7229407fbc87f0b67a08c24182edc0a4dbfdf41c835a4f7556"
+metafile = true
+
+[[files]]
+file = "mods/ftb-xmod-compat.pw.toml"
+hash = "ee976759d1fe85a69a448bffcb391aa91354edc6ba969e0b1bb5b369691abf53"
 metafile = true
 
 [[files]]
@@ -531,11 +561,6 @@ hash = "2e6fb1842744392bac79f92c25c04613af1b82a904a29f7afd0df4f61a4c757e"
 metafile = true
 
 [[files]]
-file = "mods/silk.pw.toml"
-hash = "3159f65be74fdf8c382f2079d9db965972c8612e661f126be522ae37a73c34f8"
-metafile = true
-
-[[files]]
 file = "mods/simple-voice-chat.pw.toml"
 hash = "e9eff21bd99eeb4c4b92bf27d21390c052d48477fdca3853ae08b800882830d4"
 metafile = true
@@ -588,11 +613,6 @@ metafile = true
 [[files]]
 file = "mods/trinkets.pw.toml"
 hash = "ffdb79f5bc29f990e5889f5d159a043c7046b8cd8d79f17f54b44d7ccc2b242a"
-metafile = true
-
-[[files]]
-file = "mods/veinminer.pw.toml"
-hash = "06d9fff906b545b3634f7e19b5b39b6de11ec1340c24905e02d2f6d06ee341e8"
 metafile = true
 
 [[files]]

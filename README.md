@@ -3,7 +3,7 @@
 *A world to call home.* A Fabric 1.20.1 modpack that keeps the heart of vanilla Minecraft and adds new
 biomes, creatures, food, farming, furniture and quality-of-life touches without overhauling the game.
 
-- **Minecraft** 1.20.1 · **Fabric Loader** 0.20.1 · **129 mods** (full list in [MODLIST.md](MODLIST.md))
+- **Minecraft** 1.20.1 · **Fabric Loader** 0.20.1 · **133 mods** (full list in [MODLIST.md](MODLIST.md))
 - Managed with [packwiz](https://packwiz.infra.link/); built for clients **and** servers
 - Ships as `.mrpack`, CurseForge `.zip`, a ready-to-run server `.zip`, and a Docker image
 
@@ -18,11 +18,11 @@ biomes, creatures, food, farming, furniture and quality-of-life touches without 
 | **Furniture & decoration** | Macaw's full suite (Furniture, Windows, Doors, Trapdoors, Roofs, Bridges, Fences & Walls, Stairs, Paths, Lights, Paintings, Holidays), MrCrayfish's Furniture Mod: Refurbished, Cluttered, Handcrafted, Another Furniture, Chipped, Supplementaries + Amendments, Every Compat |
 | **Farming & food** | Farmer's Delight Refabricated, Let's Do: Farm & Charm, Bakery, Brewery, Candlelight, Vinery, Meadow, Harvest with Ease, AppleSkin |
 | **Storage & travel** | Sophisticated Backpacks & Storage (Fabric ports), Waystones, Nature's Compass, Carry On, Comforts, Trinkets, Xaero's Minimap & World Map |
-| **Quality of life** | JEI, Jade, Inventory Profiles Next, Mouse Tweaks, Easy Anvils, Easy Magic, FallingTree, Leaves Be Gone, Clumps, Shulker Box Tooltip, You're in Grave Danger, Controlling, Searchables, YUNG's Menu Tweaks |
-| **Multiplayer & admin** | Simple Voice Chat, No Chat Reports, spark, Chunky |
+| **Quality of life** | JEI, Jade, Inventory Profiles Next, Mouse Tweaks, Easy Anvils, Easy Magic, FallingTree, FTB Ultimine, Leaves Be Gone, Clumps, Shulker Box Tooltip, You're in Grave Danger, Controlling, Searchables, YUNG's Menu Tweaks |
+| **Multiplayer & admin** | FTB Chunks (claims & chunk loading), FTB Teams, FTB Essentials (homes, warps, /tpa, /back), Simple Voice Chat, No Chat Reports, spark, Chunky |
 | **Performance** | Sodium, Lithium, FerriteCore, ModernFix, ImmediatelyFast, Entity Culling, More Culling, Dynamic FPS, Krypton, Indium, Sodium Extra, Reese's Sodium Options |
 | **Visual polish** *(optional on the client)* | Iris Shaders, Continuity, 3D Skin Layers, Wavey Capes, Not Enough Animations, Visuality, Particle Rain, AmbientSounds, Zoomify, Better Third Person, Chat Heads |
-| **Pack glue** | KubeJS (custom content below) |
+| **Pack glue** | KubeJS (custom content below), FTB Library, FTB XMod Compat |
 
 ### Custom content (KubeJS)
 
@@ -35,7 +35,7 @@ biomes, creatures, food, farming, furniture and quality-of-life touches without 
 | **Trail Mix** | Fast-to-eat travel snack with a short Speed boost. |
 | **QoL recipes** | Sticks and chests from logs, name tags, saddles, string from wool, leather from rotten flesh (smoker), raw ore blocks in the blast furnace, woodcutting on the stonecutter. |
 | **Mod glue** | Farmer's Delight and Farm & Charm ingredients (meats, pasta) work in each other's recipes. |
-| **Commands** | `/mundus help`, `/spawn` (with cooldown), `/coords`, `/playtime`; ops: `/gmc /gms /gma /gmsp`, `/mundus pregen <radius>` |
+| **Commands** | `/mundus help`, `/coords`, `/playtime`; ops: `/gmc /gms /gma /gmsp`, `/mundus pregen <radius>` |
 | **First join** | New players get a short field-guide book. Sleeping skips the night when 50% of players sleep. |
 
 Settings for the commands, magnet and first-join behaviour are in
@@ -148,9 +148,9 @@ and pushes the Docker image.
 
 ### Rules worth knowing
 
-- **Prefer Modrinth.** CurseForge-only mods (currently MrCrayfish's Furniture + Framework) are embedded in
-  the `.mrpack` as overrides. That is fine for private use, but Modrinth won't accept the pack for public
-  listing while they're included.
+- **Prefer Modrinth.** CurseForge-only mods (currently MrCrayfish's Furniture + Framework and the six FTB
+  mods) are embedded in the `.mrpack` as overrides. That is fine for private use, but Modrinth won't accept
+  the pack for public listing while they're included.
 - **Worldgen and gameplay mods must be `side = "both"`**, even when Modrinth says "server only".
   Singleplayer runs an integrated server, so the client needs them too. After adding a mod, check its
   `side` in `mods/<slug>.pw.toml`, then run `tools/check_deps.py`. For example, Athena is tagged
@@ -162,5 +162,9 @@ and pushes the Docker image.
   Citadel, which have no Fabric versions. Version 1.0.3 removed all three: Kilt's Forge login handshake
   clashed with Fabric API's, which delayed every server join by about 20 seconds, and its 1.20.1 line
   reached end-of-life on 8 Nov 2026. Don't bring Kilt back. If a mod has no Fabric build, leave it out.
+- **Java 17 builds only.** Players and the server run 1.20.1 on Java 17, so every jar has to be
+  compiled for Java 17 or older. Some mods ship 1.20.1 builds compiled for Java 21 (VeinMiner 2.x is one);
+  those crash at startup with `UnsupportedClassVersionError ... class file version 65.0`. The CI test-server
+  job catches this.
 - **Line endings:** packwiz hashes every file, so `.gitattributes` forces LF. Don't turn that off.
 - **Textures** for the custom content are generated by `python tools/gen_textures.py`.

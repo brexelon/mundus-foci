@@ -1,8 +1,9 @@
 # Changelog
 
 ## 1.0.3
-- Added VeinMiner mod
+- Added FTB Ultimine, FTB Essentials, FTB Chunks, and FTB XMod Compat
 - Removed Alex's Mobs, Citadel, and Kilt
+- Removed the KubeJS `/spawn` command; FTB Essentials now provides `/spawn`
 
 ## 1.0.2
 - Added Immersive Paintings mod
