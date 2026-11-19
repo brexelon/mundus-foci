@@ -38,7 +38,7 @@ hash = "3691a8e51887a13f79b1bfb1ad46a104ad43d9b27d1b82bc507d506095be623e"
 
 [[files]]
 file = "kubejs/server_scripts/00_config.js"
-hash = "9a09d63a32e0195c3caf9c2dd5b79ed4ff3963b8511412d6ff3706c06471fc2b"
+hash = "f7a1ba8a8510041d0cd360dd8b2b34c9c602ba97ac55e32ee071922b9ee9e831"
 
 [[files]]
 file = "kubejs/server_scripts/commands.js"
@@ -513,6 +513,11 @@ metafile = true
 [[files]]
 file = "mods/oh-the-trees-youll-grow.pw.toml"
 hash = "e15b4a7b7c14268f172e83a2c0597ae463b2ed6d6e048c5a7c44fc77f8148cd9"
+metafile = true
+
+[[files]]
+file = "mods/packet-fixer.pw.toml"
+hash = "ef0c8813eef47e8ffdce023dfee08152a5099817960dce86623b9a21e8b14be2"
 metafile = true
 
 [[files]]

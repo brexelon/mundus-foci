@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.5
+- Added Packet Fixer to fix "Packet too big" disconnects on join (the recipe sync packet went over the vanilla 8 MB limit)
+
 ## 1.0.4
 - Removed Xaero's Minimap & World Map as that is handled by FTB Chunks now
 

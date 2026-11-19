@@ -4,7 +4,7 @@
 
 global.MF_CONFIG = {
   // Kept in sync with pack.toml by `python tools/build.py --set-version X.Y.Z`. Do not edit by hand.
-  packVersion: '1.0.4',
+  packVersion: '1.0.5',
 
   // Lodestone Charm (item magnet).
   magnet: {
