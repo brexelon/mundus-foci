@@ -1,12 +1,12 @@
 name = "Mundus Foci"
 author = "Mundus Foci Contributors"
-version = "1.0.0"
+version = "1.0.2"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "f557792ca9c2746925d31b23eb881afb067e93951b4ded0db79f2990f0c2fa09"
+hash = "c283a3475db1e829f27a758a1d1af2836ec19ae05ea8bcb583f3787e6cd6ac7e"
 
 [versions]
 fabric = "0.20.1"

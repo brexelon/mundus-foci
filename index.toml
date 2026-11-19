@@ -38,7 +38,7 @@ hash = "3691a8e51887a13f79b1bfb1ad46a104ad43d9b27d1b82bc507d506095be623e"
 
 [[files]]
 file = "kubejs/server_scripts/00_config.js"
-hash = "a31cfe0819ff0fb8d9ab0e3196aad20599299324c74b7a3dd992204f8602e691"
+hash = "78bc65e960f909b60c2caa21699ef5647f798e5991222d6fcfe45af297496452"
 
 [[files]]
 file = "kubejs/server_scripts/commands.js"
@@ -283,6 +283,11 @@ metafile = true
 [[files]]
 file = "mods/immediatelyfast.pw.toml"
 hash = "51b79a1eacb4f15f1626c802137c95b0a4316fefb540e6ec31cf81118b91c20b"
+metafile = true
+
+[[files]]
+file = "mods/immersive-paintings.pw.toml"
+hash = "f62e99a22854616567a6ec7d024f912ee0ae873939ce2ef5bc9052814473dead"
 metafile = true
 
 [[files]]

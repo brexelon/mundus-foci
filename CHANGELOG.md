@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.2
+- Added Immersive Paintings mod
+
 ## 1.0.0
 
 First release.
