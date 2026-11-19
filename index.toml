@@ -38,7 +38,7 @@ hash = "3691a8e51887a13f79b1bfb1ad46a104ad43d9b27d1b82bc507d506095be623e"
 
 [[files]]
 file = "kubejs/server_scripts/00_config.js"
-hash = "e50bb44badbfd10bd4989e3aa875e33d7b42ce24b978f315a767cda804405c6d"
+hash = "d4ee79bdae887c30c9da0f214d2a9942c1eb3872343ce81f6fb2bb18ce18dd27"
 
 [[files]]
 file = "kubejs/server_scripts/commands.js"

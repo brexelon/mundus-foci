@@ -142,6 +142,9 @@ python tools/build.py --test-server --java "C:/path/to/java17/bin/java"   # boot
 python tools/build.py --set-version 1.1.0   # bump the version (pack.toml + KubeJS) before a release
 ```
 
+Once per clone, run `git config core.hooksPath tools/hooks`. The pre-commit hook refreshes the index and
+blocks commits where a packed file has CRLF line endings or `index.toml` is stale. Either one fails CI.
+
 **Release flow:** bump the version, update `CHANGELOG.md`, commit, then `git tag v1.1.0 && git push --tags`.
 GitHub Actions builds every format, checks dependencies, boots a test server, publishes a GitHub release
 and pushes the Docker image.

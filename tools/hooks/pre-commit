@@ -1,0 +1,32 @@
+#!/bin/sh
+# Pre-commit guard: catches what CI's "Check the index is up to date" step would reject.
+# Enable once per clone:  git config core.hooksPath tools/hooks
+#
+# 1. Every file packwiz hashes must have LF endings in the working tree. Git commits them as LF,
+#    so a CRLF copy gives a local hash that CI never reproduces.
+# 2. index.toml / pack.toml must be current and staged.
+
+cd "$(git rev-parse --show-toplevel)" || exit 1
+
+if command -v packwiz >/dev/null 2>&1; then
+  packwiz refresh >/dev/null || { echo "pre-commit: packwiz refresh failed" >&2; exit 1; }
+else
+  echo "pre-commit: packwiz not on PATH, skipping index refresh check" >&2
+fi
+
+indexed=$(mktemp)
+trap 'rm -f "$indexed"' EXIT
+sed -n 's/^file = "\(.*\)"\r*$/\1/p' index.toml > "$indexed"
+
+crlf=$(git ls-files --eol | awk -F'\t' '$1 ~ /w\/crlf/ && $1 ~ /eol=lf/ { print $2 }' | grep -Fxf "$indexed")
+if [ -n "$crlf" ]; then
+  echo "pre-commit: these packed files have CRLF line endings, so their index hashes won't match CI:" >&2
+  echo "$crlf" | sed 's/^/  /' >&2
+  echo "Fix with:  sed -i 's/\r\$//' <files> && packwiz refresh && git add index.toml pack.toml" >&2
+  exit 1
+fi
+
+if ! git diff --quiet -- index.toml pack.toml; then
+  echo "pre-commit: index.toml / pack.toml are out of date or unstaged. Run:  git add index.toml pack.toml" >&2
+  exit 1
+fi
