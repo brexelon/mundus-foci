@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = ".vscode/settings.json"
+hash = "127e1d4976ed1c297e2f6d326c8bcce86c0ab7bb1833be2c351417a8dcd999e0"
+
+[[files]]
 file = "kubejs/assets/mundusfoci/lang/en_us.json"
 hash = "618e252ab80d54972ab9f9375b3dda37e4183deace92ee635243e77df554a6f1"
 
@@ -38,7 +42,7 @@ hash = "3691a8e51887a13f79b1bfb1ad46a104ad43d9b27d1b82bc507d506095be623e"
 
 [[files]]
 file = "kubejs/server_scripts/00_config.js"
-hash = "1608bd182962d5c418359056e310fae4903ca3e4d794eb6e2dae0420bd72a852"
+hash = "256b44168ab3390e6c03b5513fc6759ee60533805ea59dd1afdeec35cbd4e1a7"
 
 [[files]]
 file = "kubejs/server_scripts/commands.js"
